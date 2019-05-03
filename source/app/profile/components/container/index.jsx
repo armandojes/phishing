@@ -3,7 +3,7 @@ import style from './style.css';
 
 function Container (props){
   return (
-    <div className={style.container}>
+    <div className={style.container} name="container_profile">
       {props.children}
     </div>
   )

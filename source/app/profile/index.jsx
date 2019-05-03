@@ -1,12 +1,11 @@
 import React from 'react';
 import style from './style.css';
-import 'reset-css';
-
+import Header from './components/header';
 
 function Profile (){
   return(
     <div name="profile_wrapper">
-      hola profile...
+      <Header />
     </div>
   )
 }

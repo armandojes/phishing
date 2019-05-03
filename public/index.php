@@ -4,6 +4,7 @@
     <base href="http://localhost/" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://localhost:9200/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no">
   </head>
   <body>
