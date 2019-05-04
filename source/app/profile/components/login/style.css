@@ -1,0 +1,66 @@
+.login{
+  width: 600px;
+}
+.form{
+  max-width: 302px;
+  width: 90%;
+  margin: auto;
+  height: 350px;
+  text-align: center;
+}
+.title{
+  font-size: 18px;
+  padding: 25px;
+}
+.input{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 34px;
+  margin: 12px 0px;
+  border: 1px solid #dddfe2;
+  padding: 0px  8px;
+}
+.button{
+  font-weight: bold;
+  background: #4266B2;
+  color: #fff;
+  height: 40px;
+}
+.option_text{
+  color: #4266B2;
+  font-size: 14px;
+  margin: 12px auto;
+}
+.separator{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.line{
+  width: 40%;
+}
+.create_acount{
+  font-size: 14px;
+  font-weight: bold;
+  width: 177px;
+  background: #36a420;
+  display: block;
+  margin: 15px auto;
+  padding: 13px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media screen and (max-width: 550px) {
+  .input{
+    padding: 0px  7px;
+  }
+  .button{
+    height: 37px;
+  }
+  .create_acount{
+    padding: 10px;
+  }
+}

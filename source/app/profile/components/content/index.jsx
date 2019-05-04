@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './style.css';
 
-function Content (prps) {
+function Content (props) {
   return (
-    <div>
+    <div className={`${style.content} ${props.className}`}>
       {props.children}
     </div>
   )

@@ -1,1 +1,11 @@
-
+.profile_wrapper{
+  background-color: #E9EBED;
+  min-height: 100vh;
+  align-items: flex-start;
+}
+.container_wrapper{
+  min-height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

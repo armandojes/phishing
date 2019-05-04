@@ -1,5 +1,7 @@
 .header{
   background: #3f5c9a;
+  width: 100%;
+  box-sizing: border-box;
 }
 .header_body{
   display: flex;

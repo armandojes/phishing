@@ -1,0 +1,15 @@
+.wrapper_body{
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+}
+.body{
+  display: flex;
+
+}
+@media screen and (max-width:500px) {
+  .body{
+    flex-direction: column;
+  }
+}
