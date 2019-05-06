@@ -39,3 +39,13 @@ class Controller {
       }
     }
   }
+
+
+  public function response ($body, $code = 200, $type = 'application/json'){
+    header("Content-type: $type");
+    http_response_code($code);
+    echo json_encode($body);
+    exit();
+  }
+
+}

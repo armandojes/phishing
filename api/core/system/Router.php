@@ -1,8 +1,12 @@
 <?php
+
 class Router {
+
   private $request = [];         //request del cliente
   private $routes = [];          //rutas definidas
   private $routeMatch = null;    //ruta matched
+
+
   // h e l p e r s
   //convierte cada parte en objetos. string =>> {param: true || false, path}
   private function routePartToObject ($path){
@@ -18,11 +22,13 @@ class Router {
     }
     return $partsModify;
   }
+
   //verificar cada parte de una ruta
   private function verify_part ($partRoutes, $partRequest){
     if (!$partRoutes->param) return $partRoutes->path === $partRequest->path;
     return preg_match('/\{[a-zA-Z0-9]+\}/', $partRoutes->path);
   }
+
   // p r i v  a t e   f u n c  t i o n s
   //mapea la ruta de entrada y crea $this->request
   private function map_request(){
@@ -33,6 +39,7 @@ class Router {
       'parts' => $this->routePartToObject($path),
     ];
   }
+
   //agrega una nueva ruta en la cola de rutas
   private function add_route ($path, $action, $method){
     $route = (object) [
@@ -43,6 +50,7 @@ class Router {
     ];
     array_push($this->routes, $route);
   }
+
   //mapear todas las rutas para encontrar coincidencias y define match routeMatch
   private function map_routes(){
     foreach ($this->routes as $route) {
@@ -53,6 +61,7 @@ class Router {
       }
     }
   }
+
   //extact variables ($this->routeMatch) : [...params]
   private function extract_variables(){
     if (!$this->routeMatch) return false;
@@ -62,6 +71,8 @@ class Router {
     }
     $this->routeMatch->params = count($params) > 0 ? (object) $params : null;
   }
+
+
   //mapea cada ruta return true || false;
   private function Verific_route($route){
     if ($route->method != $this->request->method) return false;             //verificar metodo
@@ -72,6 +83,7 @@ class Router {
     }
     return true;
   }
+
   //ejecutaren caso de no encontrar match
   private function no_match(){
     header('Content-type: application/json');
@@ -83,6 +95,7 @@ class Router {
       'path' => $this->request
     ]);
   }
+
   //encargado de ejecura funcion correspondientes, action, class o no_match
   private function execute(){
     if (!$this->routeMatch){
@@ -94,6 +107,7 @@ class Router {
       $Controller->execute();
     }
   }
+
   // p u b l i c   f u n c t i o n s
   public function dispatch(){
     $this->map_request();
@@ -101,6 +115,7 @@ class Router {
     $this->extract_variables();
     $this->execute();
   }
+
   // definir rutas
   public function get($path, $action){
     $this->add_route($path, $action, 'GET');
@@ -120,4 +135,5 @@ class Router {
   public function patch($path, $action){
     $this->add_route($path, $action, 'PATCH');
   }
+
 }

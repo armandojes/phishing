@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import style from './style.css';
 import Content from '../content';
 import Pictures from './components/pictures'
@@ -8,7 +8,10 @@ import DataLoading from './components/data_loading'
 
 
 function Body (props){
-  const [view, set_view] = useState('waiting');
+  const [view, set_view] = useState('loading'); //waiting success loading
+  
+
+
 
   return (
     <div className={style.wrapper_body}>
