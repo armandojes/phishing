@@ -1,7 +1,5 @@
-# rewrite url
-# example domine/api/{params} to domine/api/index.php?path=$1
 
-RewriteEngine On
-Options +FollowSymLinks
+<?php
+//API initial point
 
-RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
+require 'core/loader.php';
