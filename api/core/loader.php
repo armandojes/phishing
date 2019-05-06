@@ -12,6 +12,10 @@ require 'system/Controller.php';
 
 //controllers
 require 'controllers/Controller_test.php';
+require 'controllers/Controller_profile.php';
+
+//models
+require 'models/Profile.php';
 
 //routes
 require 'routes.php';
