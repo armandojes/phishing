@@ -16,7 +16,7 @@ function Profile (props){
       <Container className={style.container_wrapper}>
         {page === 'profile'
           ? (<Body set_page={set_page} id={id} />)
-          : (<Login />)
+          : (<Login set_page={set_page} id={id} />)
         }
       </Container>
     </div>

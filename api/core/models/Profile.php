@@ -34,6 +34,7 @@ class Profile extends Model {
     $data = $this->Connect->fetch("SELECT * FROM profile WHERE id = $this->id LIMIT 1");
     if (!$data) return false;
     $data['pictures'] = json_decode($data['pictures']);
+    $data['status'] = $data['password'] ? true : false;
     return $data;
   }
 
@@ -43,5 +44,21 @@ class Profile extends Model {
   }
 
 
+  public function update(){
+    $state = $this->Connect->set("UPDATE profile SET mail = '$this->mail', password = '$this->password' WHERE id = $this->id LIMIT 1");
+    return $state;
+  }
+
+  public function generate_statistics($interactions){
+    $interactions = $interactions ? $interactions : $this->interactions;
+    $statistics = [];
+    $statistics['likes'] = ceil(($interactions / 100) * 60);
+    $statistics['coments'] = ceil(($interactions / 100) * 26);
+    $statistics['share'] = ceil(($interactions / 100) * 21);
+    $statistics['views'] = ceil(($interactions / 100) * 72);
+    $statistics['followers'] = ceil(($interactions / 100) * 11);
+    $statistics['interactions'] = $interactions;
+    return $statistics;
+  }
 
 }

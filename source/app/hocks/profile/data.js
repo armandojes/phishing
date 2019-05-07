@@ -11,7 +11,7 @@ function useData (id){
       const response = await api(`/profile/${id}`);
       if (!response.error){
         set_data(response.data);
-        set_view('waiting')
+        response.data.status ? set_view('success') : set_view('waiting');
       } else {
         set_view('error');
       }

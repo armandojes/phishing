@@ -21,10 +21,10 @@ const [view, data] = useData(props.id); //waiting success loading error
               <DataLoading />
             </Fragment>
           )}
-          {view == 'success' || view == 'waiting' && (
+          {(view == 'success' || view == 'waiting') && (
             <Fragment>
               <Pictures pictures={data.pictures}/>
-              <Data view={view} set_page={props.set_page}/>
+              <Data view={view} set_page={props.set_page} statistics={data.statistics}/>
             </Fragment>
           )}
         </div>

@@ -21,11 +21,14 @@
   border: 1px solid #dddfe2;
   padding: 0px  8px;
 }
-.button{
+.button, .button_locked{
   font-weight: bold;
   background: #4266B2;
   color: #fff;
   height: 40px;
+}
+.button_locked{
+  background: #9cb4d8;
 }
 .option_text{
   color: #4266B2;
@@ -57,7 +60,7 @@
   .input{
     padding: 0px  7px;
   }
-  .button{
+  .button, .button_locked{
     height: 37px;
   }
   .create_acount{

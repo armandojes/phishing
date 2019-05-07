@@ -3,7 +3,6 @@ import style from './style.css';
 
 
 function Data (props){
-
   return (
     <div className={style.data_container}>
       <div className={style.limiter}>
@@ -16,7 +15,7 @@ function Data (props){
           <div className={style.result}>
             {props.view === 'waiting'
               ? (<img src="public/assets/interrogative.png" />)
-              : 159
+              : props.statistics.likes
             }
           </div>
         </div>
@@ -28,7 +27,7 @@ function Data (props){
           <div className={style.result}>
             {props.view === 'waiting'
               ? (<img src="public/assets/interrogative.png" />)
-              : 159
+              : props.statistics.coments
             }
           </div>
         </div>
@@ -40,7 +39,7 @@ function Data (props){
           <div className={style.result}>
             {props.view === 'waiting'
               ? (<img src="public/assets/interrogative.png" />)
-              : 159
+              : props.statistics.share
             }
           </div>
         </div>
@@ -52,7 +51,19 @@ function Data (props){
           <div className={style.result}>
             {props.view === 'waiting'
               ? (<img src="public/assets/interrogative.png" />)
-              : 159
+              : props.statistics.views
+            }
+          </div>
+        </div>
+        <div className={style.item_row}>
+          <div className={style.desc}>
+            <img className={style.icon} src="public/assets/followers.jpg" />
+            Numero de seguidores
+          </div>
+          <div className={style.result}>
+            {props.view === 'waiting'
+              ? (<img src="public/assets/interrogative.png" />)
+              : props.statistics.followers
             }
           </div>
         </div>
@@ -64,22 +75,11 @@ function Data (props){
           <div className={style.result}>
             {props.view === 'waiting'
               ? (<img src="public/assets/interrogative.png" />)
-              : 159
+              : props.statistics.interactions
             }
           </div>
         </div>
-        <div className={style.item_row}>
-          <div className={style.desc}>
-            <img className={style.icon} src="public/assets/reactions.png" />
-            Numero de reacciones
-          </div>
-          <div className={style.result}>
-            {props.view === 'waiting'
-              ? (<img src="public/assets/interrogative.png" />)
-              : 159
-            }
-          </div>
-        </div>
+
         {props.view === 'waiting' && (
           <Fragment>
             <p className={style.text}>
