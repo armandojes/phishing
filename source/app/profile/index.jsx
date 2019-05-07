@@ -6,8 +6,8 @@ import Body from './components/body';
 import Login from './components/login';
 
 
-function Profile (){
-
+function Profile (props){
+  const id = props.match.params.id;
   const [page, set_page] = useState('profile');
 
   return(
@@ -15,7 +15,7 @@ function Profile (){
       <Header />
       <Container className={style.container_wrapper}>
         {page === 'profile'
-          ? (<Body set_page={set_page} />)
+          ? (<Body set_page={set_page} id={id} />)
           : (<Login />)
         }
       </Container>

@@ -5,13 +5,11 @@ import Pictures from './components/pictures'
 import PicturesLoading from './components/pictures_loading'
 import Data from './components/data'
 import DataLoading from './components/data_loading'
-
+import useData from '../../../hocks/profile/data.js';
 
 function Body (props){
-  const [view, set_view] = useState('loading'); //waiting success loading
-  
 
-
+const [view, data] = useData(props.id); //waiting success loading error
 
   return (
     <div className={style.wrapper_body}>
@@ -23,9 +21,9 @@ function Body (props){
               <DataLoading />
             </Fragment>
           )}
-          {view != 'loading' && (
+          {view == 'success' || view == 'waiting' && (
             <Fragment>
-              <Pictures />
+              <Pictures pictures={data.pictures}/>
               <Data view={view} set_page={props.set_page}/>
             </Fragment>
           )}

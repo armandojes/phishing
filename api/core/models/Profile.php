@@ -33,7 +33,7 @@ class Profile extends Model {
   public function get_single(){
     $data = $this->Connect->fetch("SELECT * FROM profile WHERE id = $this->id LIMIT 1");
     if (!$data) return false;
-    $data['pictures_'] = json_decode($data['pictures']);
+    $data['pictures'] = json_decode($data['pictures']);
     return $data;
   }
 
