@@ -8,4 +8,8 @@ $Router->get('/test', 'Controller_test');
 $Router->get('/profile/{id}', 'Controller_profile');
 $Router->update('/profile', 'Controller_updateprofile');
 
+
+//admin
+$Router->post('/admin/login', 'Controller_login');
+
 $Router->dispatch();

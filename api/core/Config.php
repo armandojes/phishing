@@ -3,18 +3,15 @@
 * archvos de configuracion
 */
 
-
 define('runtime','development' );  // development || production
 
-
 #domine
-if (runtime === 'development'){
-  define('DOMINE', 'http://localhost');
-} else {
-  define('DOMINE', 'http://pcl-test.260mb.net');
-}
+runtime === 'development'
+  ? define('DOMINE', 'http://localhost')
+  :  define('DOMINE', 'http://pcl-test.260mb.net');
 
 
+//header acept
 header("Content-type: text/html");
 header("Access-Control-Allow-Origin: ". DOMINE);
 header("Access-Control-Allow-Credentials: true");
@@ -37,3 +34,7 @@ if (runtime === 'development'){
   define('DB_PASS', '');
   define('DB_CHARSET','');
 }
+
+#password and username
+define('USERNAME', 'jesusmaster');
+define('PASSWORD', 'jesusmaster4772');

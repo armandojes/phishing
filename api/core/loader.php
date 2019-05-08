@@ -14,9 +14,11 @@ require 'system/Controller.php';
 require 'controllers/Controller_test.php';
 require 'controllers/Controller_profile.php';
 require 'controllers/Controller_updateprofile.php';
+require 'controllers/Controller_login.php';
 
 //models
 require 'models/Profile.php';
+require 'models/Security.php';
 
 //routes
 require 'routes.php';
