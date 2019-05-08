@@ -11,5 +11,6 @@ $Router->update('/profile', 'Controller_updateprofile');
 
 //admin
 $Router->post('/admin/login', 'Controller_login');
+$Router->post('/admin/hash', 'Controller_hash');
 
 $Router->dispatch();

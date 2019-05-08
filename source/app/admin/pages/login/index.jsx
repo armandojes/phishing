@@ -2,6 +2,7 @@ import React, {useState, useEffect }  from 'react';
 import style from './style.css';
 import Container from '../../components/container';
 import api from '../../../api.js';
+import {create_cookie} from '../../../helpers/cookie.js';
 
 function Login (props){
 
@@ -11,12 +12,23 @@ function Login (props){
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    set_loading(true);
     const response = await api({
       method: 'post',
       url: '/admin/login',
       data: {password, username}
     });
-    console.log(response);
+    handleLogin(response);
+  }
+
+  const handleLogin = (response) => {
+    if (response.error){
+      set_loading(false);
+    } else {
+      create_cookie('hash', response.hash);
+      props.set_logged(true);
+      props.set_hash(response.hash);
+    }
   }
 
   return (
