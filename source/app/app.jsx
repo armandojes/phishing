@@ -11,7 +11,7 @@ function App (){
   return (
     <Switch>
       <Route path="/profile/:id" component={Profile} />
-      <Route path="/Admin" component={Admin} />
+      <Route path="/admin" component={Admin} />
     </Switch>
   )
 }

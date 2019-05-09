@@ -4,6 +4,8 @@ import style from './style.css';
 import Login from './pages/login';
 import api from '../api.js';
 import { get_cookie, delete_cookie } from '../helpers/cookie.js';
+import Pages from './pages.jsx';
+
 
 const Admin = (props) => {
 
@@ -29,6 +31,7 @@ const Admin = (props) => {
         delete_cookie('hash');
       } else {
         set_logged(true);
+        set_hash(hash);
       }
     }
 
@@ -53,7 +56,7 @@ const Admin = (props) => {
 
   if (logged === true) return (
     <div className="admin_aplication" className={style.admin}>
-      logged
+      <Pages />
     </div>
   )
 

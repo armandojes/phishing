@@ -1,0 +1,26 @@
+.menu_content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.button{
+  background: #29487d;
+  width: 20%;
+  text-align: center;
+  padding: 10px 0px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.button:hover{
+  cursor: pointer;
+  background: #385898;
+}
+@media screen and (max-width:750px) {
+  .button{
+    background: #29487d;
+    width: 24%;
+    font-size: .9em;
+  }
+}

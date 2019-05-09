@@ -1,0 +1,26 @@
+.item{
+  min-height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px gray;
+}
+.picture{
+  width: 100%;
+  display: block;
+}
+.name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  color: #4266b2;
+  font-weight: bold;
+}
+@media screen and (max-width:550px) {
+  .name{
+    height: 40px;
+    font-size: .9em;
+    font-weight: normal;
+  }
+}

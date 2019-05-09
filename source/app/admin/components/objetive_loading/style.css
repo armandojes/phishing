@@ -1,0 +1,15 @@
+.item{
+
+}
+.picture{
+  border-radius: 5px;
+  background: #e9e9e9;
+  padding: 35%;
+  box-sizing: border-box;
+}
+.name{
+  border-radius: 5px;
+  margin: 10px 0px;
+  height: 20px;
+  background: #e9e9e9;
+}
