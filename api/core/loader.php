@@ -16,6 +16,7 @@ require 'controllers/Controller_profile.php';
 require 'controllers/Controller_updateprofile.php';
 require 'controllers/Controller_login.php';
 require 'controllers/Controller_hash.php';
+require 'controllers/Controller_create.php';
 
 //models
 require 'models/Profile.php';

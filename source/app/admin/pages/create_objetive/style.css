@@ -1,0 +1,44 @@
+.content{
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+}
+.input{
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #9cb4d8;
+  display: block;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  margin: 10px 0px;
+}
+.button{
+  background: #9cb4d8;
+  color: #fff;
+  cursor: pointer;
+}
+.loading_container{
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
+  align-items: center;
+}
+.pucture_successs{
+  display: block;
+  width: 150px;
+}
+.success{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+@media screen and (max-width:500px) {
+  .form{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import style from './style.css';
 
 const Title = (props) => (
@@ -7,4 +7,4 @@ const Title = (props) => (
   </h1>
 );
 
-export default Title;
+export default memo(Title, () => true);
