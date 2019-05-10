@@ -5,7 +5,7 @@ import api from '../../../api.js';
 import Obtetive from '../../components/objetive'
 import ObtetiveLoading from '../../components/objetive_loading'
 
-function Objetives(){
+function ObjetivesSuccess(){
 
   const [items, set_items] = useState([]);
   const [loading, set_loading] = useState(false);
@@ -13,7 +13,7 @@ function Objetives(){
   useEffect(() => {
     const fetchdata = async () => {
       set_loading(true);
-      const response = await api('/objetives');
+      const response = await api('/objetives/success');
       set_items(response.items);
       set_loading(false);
     }
@@ -46,4 +46,4 @@ function Objetives(){
   )
 }
 
-export default Objetives;
+export default ObjetivesSuccess;

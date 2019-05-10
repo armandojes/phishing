@@ -61,4 +61,26 @@ class Profile extends Model {
     return $statistics;
   }
 
+  public function get_objetives(){
+    $list = $this->Connect->fetch_list("SELECT * FROM profile WHERE password IS NULL ORDER BY id DESC");
+    if (!$list) return false;
+    return $this->decode_picture_list($list);
+  }
+
+
+  public function get_objetivessuccess(){
+    $list = $this->Connect->fetch_list("SELECT * FROM profile WHERE password IS NOT NULL ORDER BY id DESC");
+    if (!$list) return false;
+    return $this->decode_picture_list($list);
+  }
+
+
+  private function decode_picture_list($list){
+    $decoded_list = [];
+    foreach ($list as $item) {
+      $item['picture'] = json_decode($item['pictures'])[0];
+      array_push($decoded_list, $item);
+    }
+    return $decoded_list;
+  }
 }

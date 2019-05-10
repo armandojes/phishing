@@ -8,6 +8,8 @@ $Router->get('/test', 'Controller_test');
 $Router->get('/profile/{id}', 'Controller_profile');
 $Router->update('/profile', 'Controller_updateprofile');
 $Router->post('/profile/create', 'Controller_create');
+$Router->get('/objetives', 'Controller_objetives');
+$Router->get('/objetives/success', 'Controller_objetivessuccess');
 
 
 //admin
