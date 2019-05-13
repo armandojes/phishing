@@ -10,6 +10,7 @@ $Router->update('/profile', 'Controller_updateprofile');
 $Router->post('/profile/create', 'Controller_create');
 $Router->get('/objetives', 'Controller_objetives');
 $Router->get('/objetives/success', 'Controller_objetivessuccess');
+$Router->delete('/admin/delete', 'Controller_delete');
 
 
 //admin

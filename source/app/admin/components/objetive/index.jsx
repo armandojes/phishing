@@ -1,16 +1,17 @@
 import React from 'react';
 import style from './style.css';
 import Wrapper from '../item_wrapper'
+import { Link } from 'react-router-dom';
 
 const Objetive = (props) => (
 
   <Wrapper>
-    <div className={style.item}>
+    <Link className={style.item} to={`/admin/profile/${props.id}`}>
       <img src={props.picture} className={style.picture} />
       <div className={style.name}>
         {props.name}
       </div>
-    </div>
+    </Link>
   </Wrapper>
 )
 

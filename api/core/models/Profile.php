@@ -83,4 +83,9 @@ class Profile extends Model {
     }
     return $decoded_list;
   }
+
+  public function delete(){
+    $state = $this->Connect->set("DELETE FROM profile WHERE id = $this->id LIMIT 1");
+    return $state;
+  }
 }
