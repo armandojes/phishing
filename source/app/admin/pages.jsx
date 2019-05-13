@@ -9,9 +9,9 @@ import ObjetivesSuccess from './pages/objetives_success'
 import CreateObjetive from './pages/create_objetive'
 import Profile from './pages/profile';
 
-const Pages = () => (
+const Pages = ({logout}) => (
   <Container>
-    <Menu />
+    <Menu logout={logout}/>
     <Switch>
       <Route path="/admin" exact component={Objetives} />
       <Route path="/admin/crear" exact component={CreateObjetive} />

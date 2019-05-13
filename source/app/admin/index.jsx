@@ -39,7 +39,10 @@ const Admin = (props) => {
     if (!hash) set_logged(false);
   },[]);
 
-
+  const logout = () => {
+    delete_cookie('hash');
+    props.history.replace('/');
+  }
 
   if (logged === 'loading') return (
     <div className={style.loading_container}>
@@ -56,7 +59,7 @@ const Admin = (props) => {
 
   if (logged === true) return (
     <div className="admin_aplication" className={style.admin}>
-      <Pages />
+      <Pages logout={logout} />
     </div>
   )
 
