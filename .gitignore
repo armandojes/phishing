@@ -1,5 +1,0 @@
-node_modules/
-package-lock.json
-api/core/controllers/Controller_test.php
-public/app.js
-public/style.css

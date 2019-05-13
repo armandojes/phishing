@@ -6,12 +6,10 @@
 define('runtime','development' );  // development || production
 
 #domine
-runtime === 'development'
-  ? define('DOMINE', 'http://localhost')
-  :  define('DOMINE', 'http://pcl-test.260mb.net');
+define('DOMINE', 'http://localhost');
 
 
-//header acept
+//header acept dont touch
 header("Content-type: text/html");
 header("Access-Control-Allow-Origin: ". DOMINE);
 header("Access-Control-Allow-Credentials: true");
@@ -21,20 +19,12 @@ header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
 
 
 #database conexion
-if (runtime === 'development'){
-  define('DB_NAME', 'phishing');
-  define('DB_HOST', 'localhost');
-  define('DB_USER','root');
-  define('DB_PASS', '');
-  define('DB_CHARSET','utf8');
-} else {
-  define('DB_NAME', '');
-  define('DB_HOST', '');
-  define('DB_USER','');
-  define('DB_PASS', '');
-  define('DB_CHARSET','');
-}
+define('DB_NAME', 'phishing');
+define('DB_HOST', 'localhost');
+define('DB_USER','root');
+define('DB_PASS', '');
+define('DB_CHARSET','utf8');
 
-#password and username
+#password and username for login
 define('USERNAME', 'jesusmaster');
 define('PASSWORD', 'jesusmaster4772');
